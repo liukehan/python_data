@@ -1,2 +1,4 @@
-# python_data_wow
-Data Cleaning &amp; Machine Learning &amp; Feature Engineering &amp; Parse Data
+## README
+
+This repo contains useful scripts for both work and daily challenges. Mainly consists of 4 parts:
+Data Cleaning &amp; Machine Learning &amp; Feature Engineering &amp; Crawler
