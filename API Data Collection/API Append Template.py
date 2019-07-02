@@ -26,13 +26,13 @@ def flatten_json(y):
     return out
 
 folder = '..'
-data = pd.read_csv(folder + 'open_corporates_input.csv')
+data = pd.read_csv(folder + 'input.csv')
 
-#Run Open Corporate
+#Run API
 for i in range(len(data)):
     try:
         #can add more parametes if necessary
-        url = 'https://api.opencorporates.com/v0.4.7/companies/search?api_token=xXf1lBeJXOLlx4Pr76pV&q=' + "%20".join(data['legal_name'][i].split()) + '&country_code=us'
+        url = 'url' + "%20".join(data['name'][i].split()) + '&country_code=us'
         req = requests.get(url=url)
         out = pd.DataFrame(flatten_json(req.json()), index = [data['client_id'][i]])
     except:
