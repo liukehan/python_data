@@ -2,7 +2,7 @@ import pandas as pd
 import spacy
 nlp = spacy.load('en')
 
-data = pd.read_csv('/Users/claraliu/Downloads/whitepages_337k.csv')
+data = pd.read_csv('data.csv')
 #initialize individual 
 data['individual'] = 0
 
@@ -48,5 +48,5 @@ indi = data[data['individual'] == 1]
 indi['First Name'] = indi['Name'].apply(fi)
 indi['Last Name'] = indi['Name'].apply(la)
 
-indi.to_csv('/Users/claraliu/Downloads/whitepages_336k_individual.csv', index = False)
+indi.to_csv('individual.csv', index = False)
 
