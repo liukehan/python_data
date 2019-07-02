@@ -2,8 +2,8 @@ import pandas as pd
 
 data = pd.read_csv('..\data.csv')
 gbr = data.groupby("property_id")['Address Result Type'].count()
-target=pd.DataFrame(gbr).sort_values(by = 'Address Result Type', axis = 0, ascending = False)
-target.columns=['num']
+target = pd.DataFrame(gbr).sort_values(by = 'Address Result Type', axis = 0, ascending = False)
+target.columns = ['num']
 
 def StratifiedSampling(group, typicalFracDict):
     name = group.name
