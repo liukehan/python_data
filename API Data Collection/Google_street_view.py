@@ -70,7 +70,7 @@ class street_view:
                 
 #Search Image
 import pandas as pd
-data = pd.read_csv('D:\\Clients\\Cincinnati Financial\\input 5 02052019\\INPUT FILE - google.csv', encoding = 'utf-8')
+data = pd.read_csv('file - google.csv', encoding = 'utf-8')
 data['add'] = data['LOC_STREET1'] + ", " + data['LOC_CITY'] + ", " + data["LOC_STATE"] + ", " + data['COUNTRY']
 for i in range(3):
     params = [{
@@ -78,8 +78,8 @@ for i in range(3):
 	'location': str(data.iloc[i,:]['add']),
 	'heading': '151.78',
 	'pitch': '-0.76',
-	'key': 'AIzaSyD6abYckbgTesmrT_9Q1nbCR_3mElUhmQg'
+	'key': 'xxxxxxxxxxxxxxxxxxxxx'
               }]
     results = street_view(params)
-    results.download_images('D:\Clients\Cincinnati Financial\output (input 5)\google_street_view', image_name = str(data.iloc[i,:]['CLIENT_ID']))
+    results.download_images('google_street_view', image_name = str(data.iloc[i,:]['ID']))
     
